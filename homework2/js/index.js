@@ -17,7 +17,7 @@ if (100 >= count && count >= 90) {
     console.log("Удовлетворительно");
 } else if (39 >= count && count >= 0) {
     console.log("Попробуйте еще раз");
-} 
+}
 
 // ### Задача на switch
 
@@ -30,16 +30,16 @@ let sum = 1238;
 let code = 6113;
 switch (code) {
     case 4653:
-        console.log(`Сумма покупки ${(sum*0.7).toFixed(2)} рублей`);
+        console.log(`Сумма покупки ${(sum * 0.7).toFixed(2)} рублей`);
         break;
     case 5698:
     case 5111:
-        console.log(`Сумма покупки ${(sum*0.8).toFixed(2)} рублей`);
+        console.log(`Сумма покупки ${(sum * 0.8).toFixed(2)} рублей`);
         break;
     case 6922:
     case 6113:
     case 6099:
-        console.log(`Сумма покупки ${(sum*0.9).toFixed(2)} рублей`);
+        console.log(`Сумма покупки ${(sum * 0.9).toFixed(2)} рублей`);
         break;
     default:
         console.log("Обойдетесь без скидки!!!");
@@ -52,14 +52,38 @@ switch (code) {
 let plate = 10;
 let fairy = 4;
 while (plate > 0 && fairy > 0) {
-plate=plate-1;
-console.log(plate)
-fairy=fairy-0.5;
-console.log(fairy);
-if (plate===0) {
-    console.log(`Все таррелки помыты! Моющего средства осталось ${fairy} `)
-} else if (fairy===0) {
-    console.log(`Моющее средство закончилось! Осталось вымыть ${plate} тарелок `)
+    plate = plate - 1;
+    console.log(plate)
+    fairy = fairy - 0.5;
+    console.log(fairy);
+    if (plate === 0) {
+        console.log(`Все таррелки помыты! Моющего средства осталось ${fairy} `)
+    } else if (fairy === 0) {
+        console.log(`Моющее средство закончилось! Осталось вымыть ${plate} тарелок `)
+    }
+    if (plate === 0 || fairy === 0) break;
 }
-if (plate===0 || fairy === 0) break;
+// Программа загадывает число в диапазоне [1;9] (задать через Math.random()). Пользователь вводит число с клавиатуры.
+
+// Программа в зависимости от введенного числа выводит в консоль следующее: 
+// 1) "загаданное число больше" 
+// 2) "загаданное число меньше" 
+// 3) "Вы угадали" (программа завершает работу) 
+// 4) если пользователь ввел 0, выводит "выход из программы" (программа завершает работу)
+let a = Math.floor(1 + Math.random() * 9);
+while (true) {
+    let x = prompt('Введите число');
+    
+    let myNumber = parseInt(x);
+    console.log(a);
+    if (a > myNumber) {
+        console.log("Загаданное число больше!");
+    } else if (a < myNumber) {
+        console.log("Загаданное число меньше!");
+    } else if (a === myNumber) {
+        console.log("Вы угадали!");
+        break;
+    } else if (myNumber === 0 || myNumber === NaN) {
+        break;
+    }
 }
