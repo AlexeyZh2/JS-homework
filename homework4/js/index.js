@@ -18,19 +18,32 @@ console.log(arrLessZero);
 // Задача на цикл for
 // Создать массив из целых чисел, заполнить массив семью рандомными значениями в диапазоне [5; 300). 
 //Поменять элементы с максимальным и минимальным значениями местами.
-function range(start, end, step = 1) {
-  let array = [];
-  array[0] = start;
-  for (let number = start; number < end; number += step) {
-    let item = number + step;
-    array.push(item);
 
-  }
-  [array[0], array[array.length - 1]] = [array[array.length - 1], array[0]];
-  return array;
+let array = [];
+
+for (let i = 0; i < 7; i++) {
+  let item = Math.floor(Math.random() * (300 - 5) + 5);
+  array.push(item);
+
+}
+MAXNumber = Math.max(...array)
+console.log(MAXNumber)
+MAXIndex = array.indexOf(MAXNumber)
+console.log(MAXIndex);
+MINNumber = Math.min(...array)
+console.log(MINNumber)
+MINIndex = array.indexOf(MINNumber)
+console.log(MINIndex)
+console.log(array)
+if (MAXIndex < MINIndex) {
+ [array[MAXIndex], array[MINIndex]] = [array[MINIndex], array[MAXIndex]];
+} else {
+  [array[MINIndex], array[MAXIndex]] = [array[MAXIndex], array[MINIndex]];
 }
 
-console.log(range(3, 9))
+
+console.log(array.indexOf(MAXNumber));
+console.log(array)
 
 
 // Задача на цикл while и метод массива

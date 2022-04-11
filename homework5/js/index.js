@@ -17,16 +17,15 @@
 
 //     console.log(имя(3, 9, 2)); вернет массив вида [3, 5, 7, 9]
 //     console.log(имя(2, 9)); вернет массив вида [2, 3, 4, 5, 6, 7, 8, 9]
-function range (start, end, step=1) {
-    let arr = [];
-    arr[0] = start;
-    console.log(arr);
-    for (let number = start + step; number <= end; step) {
-        let item = number + step;
-        console.log(item)
-        arr.push(item)
-      }
-      return;
+function range(start, end, step = 1) {
+  let array = [];
+  array[0] = start;
+  for (let number = start; number < end; number += step) {
+    let item = number + step;
+    array.push(item);
+
+  }
+  return array;
 }
 
 console.log(range(3, 9, 2));
@@ -39,7 +38,8 @@ console.log(range(3, 9, 2));
 
 // Результат вернуть из функции.
 
-function checkSpam (text, ...spamWord){
+function checkSpam (text, ...spamWords){
+
 
 }
 
