@@ -21,13 +21,17 @@ let presents = ["книга", "ручка", "блокнот", "дождевик"
 
 
 console.log(presents.sort(() => Math.random() - 0.5));
+console.log(Math.random() - 0.5)
 // Задача 3 на методы filter() и includes()
 // Создать массив из пересечений массива first и second.
 
 let first = ["Апрель", "Июль", "Октябрь", "Май"],
     second = ["Май", "Январь", "Декабрь", "Октябрь"];
+let third = first.filter(item => second.includes(item));
+console.log(third)
 
 // В итоге должен быть создан массив: ["Октябрь", "Май"]
+
 // Задача 4 на метод some()
 // Дан массив температур. Необходимо выяснить, поднималась ли температура выше 500, вывести информацию об этом в консоль.
 
@@ -36,11 +40,11 @@ let temperatures = [
     [111, 313, 351, 314],
     [134, 111, 452],
 ];
-function temperature500 (arr) {
+function temperature500(arr) {
     for (let bigArr of arr) {
-        
-        if (bigArr.some(x => x >500 )) {
-            console.log(`Температура поднималась более 500 градусов`)  
+
+        if (bigArr.some(x => x > 500)) {
+            console.log(`Температура поднималась более 500 градусов`)
         }
         // for (let number of bigArr) {
 
