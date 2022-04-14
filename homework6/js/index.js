@@ -19,10 +19,8 @@ console.log(numbersSort);
 
 let presents = ["книга", "ручка", "блокнот", "дождевик", "скрепки", "брелок"];
 
-console.log(presents.sort(function (s, t) {
-let a = presents[Math.floor(Math.random())*presents.length + 1]
-    return [Math.floor(Math.random())*presents.length + 1] - [Math.floor(Math.random())*presents.length + 1]
-}))
+
+console.log(presents.sort(() => Math.random() - 0.5));
 // Задача 3 на методы filter() и includes()
 // Создать массив из пересечений массива first и second.
 
