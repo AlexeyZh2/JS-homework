@@ -6,6 +6,47 @@
 // to - число.
 // Функция формирует и возвращает новый ОБЪЕКТ с объектами, значения 
 // свойств price которых лежат в диапазоне от значения from до значения to, не включая to.
+let items = {
+    piano: {
+        title: "Пианино",
+        price: 3000,
+        count: 25
+    },
+    guitar: {
+        title: "Гитара",
+        price: 1200,
+        count: 40
+    },
+    drum: {
+        title: "Барабаны",
+        price: 2700,
+        count: 12
+    },
+    flute: {
+        title: "Флейта",
+        price: 900,
+        count: 50
+    },
+    harp: {
+        title: "Арфа",
+        price: 3400,
+        count: 5
+    }
+};
+
+function priceList (obj, from, to) {
+    let itemPrice = {};  
+    for (let item in obj) {
+        if (obj[item].price > from && obj[item].price < to) {
+            
+           itemPrice[item] = obj[item];
+        }
+    }
+    return itemPrice;
+}
+let newArr = priceList(items, 1000, 3000);
+console.log(newArr)
+
 
 // Задача 2
 // Написать функцию, которая принимает на вход три аргумента:
@@ -19,33 +60,24 @@
 
 // если количество не позволяет, то вывести информацию об этом в консоль и вернуть false.
 
- let items = {
-     piano: {
-         title: "Пианино",
-         price: 3000,
-         count: 25
-     },
-     guitar: {
-         title: "Гитара",
-         price: 1200,
-         count: 40
-     },
-     drum: {
-         title: "Барабаны",
-         price: 2700,
-         count: 12
-     },
-     flute: {
-         title: "Флейта",
-         price: 900,
-         count: 50
-     },
-     harp: {
-         title: "Арфа",
-         price: 3400,
-         count: 5
-     }
- };
+function qwerty (obj, itemTitle, countToCart) {
+    for (let item in obj) {
+        if (obj[item].title === itemTitle && countToCart < obj[item].count) {
+           return console.log("Можно купить!")
+            //console.log(obj[item].count)
+           //item.count = item.count - countToCart;
+        }  
+        if (!(obj[item].title === itemTitle)) {
+             console.log ("Такого товара нет в принципе!")
+        }
+        if (countToCart > obj[item].count) {
+            console.log("Нет достаточного количества товара!")
+        }
+    }
+}
+
+qwerty (items, "Гитара", 15)
+console.log(items)
 // Задача 3
 // Отсортировать массив books по значению свойства title вложенных объектов
 
