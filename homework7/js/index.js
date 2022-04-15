@@ -34,12 +34,12 @@ let items = {
     }
 };
 
-function priceList (obj, from, to) {
-    let itemPrice = {};  
+function priceList(obj, from, to) {
+    let itemPrice = {};
     for (let item in obj) {
         if (obj[item].price > from && obj[item].price < to) {
-            
-           itemPrice[item] = obj[item];
+
+            itemPrice[item] = obj[item];
         }
     }
     return itemPrice;
@@ -60,39 +60,43 @@ console.log(newArr)
 
 // если количество не позволяет, то вывести информацию об этом в консоль и вернуть false.
 
-function qwerty (obj, itemTitle, countToCart) {
+function qwerty(obj, itemTitle, countToCart) {
+    let newCount;
     for (let item in obj) {
-        if (obj[item].title === itemTitle && countToCart < obj[item].count) {
-           return console.log("Можно купить!")
-            //console.log(obj[item].count)
-           //item.count = item.count - countToCart;
-        }  
-        if (!(obj[item].title === itemTitle)) {
-             console.log ("Такого товара нет в принципе!")
-        }
-        if (countToCart > obj[item].count) {
-            console.log("Нет достаточного количества товара!")
+
+        if (obj[item].title === itemTitle) {
+            if (countToCart < obj[item].count) {
+                newCount = obj[item].count - countToCart;
+                obj[item].count = newCount
+
+                console.log("Товар можно приобрести")
+            }
+            if (countToCart > obj[item].count) {
+                console.log("Необходимого количества товара нет в наличии!")
+                return false;
+            }
         }
     }
 }
 
-qwerty (items, "Гитара", 15)
+
+qwerty(items, "Гитара", 60)
 console.log(items)
 // Задача 3
 // Отсортировать массив books по значению свойства title вложенных объектов
 
-    let books = [
-        {author: "Толстой", title: "Война и мир"},
-        {author: "Пушкин", title: "Пир во время чумы"},
-        {author: "Лермонтов", title: "Тамань"},
-        {author: "Гончаров", title: "Обломов"},
-        {author: "Лермонтов", title: "Герой нашего времени"},
-        {author: "Пушкин", title: "Руслан и Людмила"},
-        {author: "Лермонтов", title: "И скучно, и грустно"},
-    ];
-   let booksSort = books.sort(function (a, b) {
-       if (a.title < b.title) return -1;
-       if (a.title > b.title) return 1;
-       return 0;
-   });
-   console.log(booksSort)
+let books = [
+    { author: "Толстой", title: "Война и мир" },
+    { author: "Пушкин", title: "Пир во время чумы" },
+    { author: "Лермонтов", title: "Тамань" },
+    { author: "Гончаров", title: "Обломов" },
+    { author: "Лермонтов", title: "Герой нашего времени" },
+    { author: "Пушкин", title: "Руслан и Людмила" },
+    { author: "Лермонтов", title: "И скучно, и грустно" },
+];
+let booksSort = books.sort(function (a, b) {
+    if (a.title < b.title) return -1;
+    if (a.title > b.title) return 1;
+    return 0;
+});
+console.log(booksSort)
