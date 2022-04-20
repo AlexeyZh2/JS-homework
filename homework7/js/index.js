@@ -100,3 +100,15 @@ let booksSort = books.sort(function (a, b) {
     return 0;
 });
 console.log(booksSort)
+
+
+function generateField (n) {
+    if (n<3) {
+        return;
+    }
+    //добавление поля в html
+    //let cell = получить ячейки
+    //let randomCell = cells[рандомный индукс]
+    //randomCell - добавить атрибут
+
+}
