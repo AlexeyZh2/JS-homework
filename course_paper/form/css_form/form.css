@@ -1,0 +1,49 @@
+body {
+    background-color: aquamarine;
+}
+form {
+    text-align: center;
+    width: 60%;
+    margin: 40px auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+textarea {
+    display: inline-block;
+}
+#task {
+    width: 100%;
+}
+#about_task {
+    width: 100%;
+}
+p {
+    display: inline-block;
+    width: 40%;
+    margin: 0;
+    text-align: left;
+}
+.task_status {
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    color: green;
+}
+
+button {
+    width: 80%;
+    margin: 0 auto;
+    height: 30px;
+}
+.error {
+    display: block;
+    margin-bottom: 30px;
+    color: red;
+    font-size: 12px;
+}
+.input_container {
+    display: inline-block;
+    width: 55%;
+    box-sizing: border-box;
+}
