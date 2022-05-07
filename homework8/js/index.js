@@ -105,7 +105,7 @@
         postcard: "Открытка"
      };
      let keysTask2 = Object.keys(prises)
-     console.log(keysTask2[0]);
+    
      function generateField (n) {
         let table = document.createElement("table");
         table.classList.add('field')
@@ -116,7 +116,6 @@
         for (let i = 1; i<=n; i++) {
         arr.push(i)
         }
-        console.log(arr)
         for (let item of arr) {
             let row = table.insertRow();
             let id = 0
@@ -125,12 +124,14 @@
                 let cell = row.insertCell();
                 cell.setAttribute("id", id)
                 cell.style.border = "1px solid black"
-                cell.style.width = "50px"
-                cell.style.height = "50px"
-                console.log(cell)
+                cell.style.width = "70px"
+                cell.style.height = "70px"
             } 
         }
-        table.rows[1].cells[2].innerHTML="Ура!"
+        for (let item in prises) {
+            table.rows[Math.floor(Math.random()*n)].cells[Math.floor(Math.random()*n)].innerText=prises[item]
+        }
+       
         document.body.append(table)
     }
-    generateField (4)
+    generateField (5)
