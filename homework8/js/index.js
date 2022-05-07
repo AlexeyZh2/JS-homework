@@ -61,13 +61,17 @@
             count: 5
         }
     ];
+    let keys = Object.keys(articles[0])
+    console.log(keys);
+
     function generateTable (arr) {
         let table = document.createElement("table");
         table.classList.add('table')
         
         let keys = Object.keys(arr[0])
         let firstRow = table.insertRow();
-        console.log(firstRow)
+        firstRow.classList.add('first-row')
+        
         for (let key of keys) {
             let cell = firstRow.insertCell();
             cell.style.border = "1px solid black"
@@ -77,6 +81,7 @@
         }
         for (let elem of arr) {
             let row = table.insertRow();
+            row.classList.add("table-row")
             for (let prop in elem) {
                 let cell = row.insertCell();
                 cell.style.border = "1px solid black"
@@ -86,9 +91,8 @@
         document.body.append(table)
     }
 
-   // Примеры вызова функции:
-    generateTable(articles);// - генерация таблицы со статьями
-    generateTable(goods);// - генерация таблицы с товарами
+    generateTable(articles);
+    generateTable(goods);
 // Задание 2
 // Написать функцию generateField(n) по генерации поля размером n x n. 
 // Значение n не может быть меньше 3. Для 3х ячеек поля (для выбора ячейки использовать random) 
@@ -100,3 +104,33 @@
         book: "Книга",
         postcard: "Открытка"
      };
+     let keysTask2 = Object.keys(prises)
+     console.log(keysTask2[0]);
+     function generateField (n) {
+        let table = document.createElement("table");
+        table.classList.add('field')
+         if (n < 3) {
+             return
+         }
+       let arr = [];
+        for (let i = 1; i<=n; i++) {
+        arr.push(i)
+        }
+        console.log(arr)
+        for (let item of arr) {
+            let row = table.insertRow();
+            let id = 0
+            for (let item of arr) {
+                id++
+                let cell = row.insertCell();
+                cell.setAttribute("id", id)
+                cell.style.border = "1px solid black"
+                cell.style.width = "50px"
+                cell.style.height = "50px"
+                console.log(cell)
+            } 
+        }
+        table.rows[1].cells[2].innerHTML="Ура!"
+        document.body.append(table)
+    }
+    generateField (4)
