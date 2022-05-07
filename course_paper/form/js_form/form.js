@@ -59,7 +59,7 @@ function addTask(event) {
     // в массив объектов
     if (tasks) {
         tasks = JSON.parse(tasks);  
-        taskInfo.taskId = tasks[length-1].taskId + 1;
+        taskInfo.taskId = tasks[tasks.length-1].taskId + 1;
     }
     // если tasks равен null, значит создаем пустой маcсив
     else {
