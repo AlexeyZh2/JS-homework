@@ -50,6 +50,7 @@ function game(event) {
     console.log("Ура!")
     if (event.target.hasAttribute("data-prise")) {
         event.target.innerText = "Вы выиграли!"
+        event.target.style.backgroundColor = "red"
         this.removeEventListener("click", game)
     } else if (countClick === 10) {
         this.removeEventListener("click", game)
