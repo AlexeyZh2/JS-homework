@@ -82,13 +82,11 @@ function minos(event) {
     if (+event.target.nextElementSibling.textContent >= 0) {
         event.target.nextElementSibling.innerText = countValue
     }
-    if (event.target.nextElementSibling.textContent = "Cтолько много товара нет!)") {
-        // event.target.nextElementSibling.textContent = +event.target.nextElementSibling.getAttribute("data_count")
-        // countValue--;
+    if (event.target.nextElementSibling.textContent === "Cтолько много товара нет!)") {
         countValue = +event.target.nextElementSibling.getAttribute("data_count")
         event.target.nextElementSibling.textContent = countValue
-        console.log(countValue)
     }
+
     if (countValue === 0 || countValue < 0) {
         event.target.nextElementSibling.innerText = 0
     }
